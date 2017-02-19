@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+class PrintARecepit
+{
+    static void Main()
+    {
+        decimal[] num = Console.ReadLine().Split(' ').Select(decimal.Parse).ToArray();
+        decimal sum = 0;
+        Console.WriteLine("/" + new string('-', 22) + "\\");
+        foreach (var entry in num)
+        {
+            Console.WriteLine("| {0,20:F2} |", entry);
+            sum += entry;
+        }
+        Console.WriteLine("|" + new string('-', 22) + "|");
+        Console.WriteLine("| Total: {0,13:F2} |", sum);
+        Console.WriteLine("\\" + new string('-', 22) + "/");
+    }
+}
