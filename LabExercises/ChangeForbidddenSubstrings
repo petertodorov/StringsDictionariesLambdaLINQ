@@ -1,0 +1,25 @@
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+class ChangeForbidddenSubstrings
+{
+    static void Main(string[] arg)
+    {
+        string input = Console.ReadLine();
+        List<string> words = Console.ReadLine().Split(' ').ToList();
+        foreach (var word in words)
+        {
+            string strings = new string('*', word.Length);
+
+            input = input.Replace(word, strings);
+        }
+        Console.WriteLine(input);
+    }
+}
+
+
+
+
