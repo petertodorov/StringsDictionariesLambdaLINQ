@@ -14,7 +14,7 @@ class CountOccurrencesInString
         int startPosition = 0;
         while (true)
         {
-            int pos = input.IndexOf(check, startPosition);
+            int pos = input.IndexOf(check, startPosition,StringComparison.InvariantCultureIgnoreCase);
             if (pos == -1)
             {
                 break;
