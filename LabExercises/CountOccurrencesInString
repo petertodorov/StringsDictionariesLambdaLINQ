@@ -9,12 +9,12 @@ class CountOccurrencesInString
     static void Main(string[] arg)
     {
         string input = Console.ReadLine();
-        string check = Console.ReadLine();
+        string toCheck = Console.ReadLine();
         int counter = 0;
         int startPosition = 0;
         while (true)
         {
-            int pos = input.IndexOf(check, startPosition,StringComparison.InvariantCultureIgnoreCase);
+            int pos = input.IndexOf(toCheck, startPosition,StringComparison.InvariantCultureIgnoreCase);
             if (pos == -1)
             {
                 break;
