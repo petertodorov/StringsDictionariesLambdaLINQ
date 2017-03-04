@@ -1,0 +1,29 @@
+using System;
+using System.Text;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+class CountRealNumbers
+{
+    static void Main()
+    {
+        int[] input = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+        Dictionary <decimal, int> counts= new Dictionary<decimal,int>();
+        foreach (var item in input)
+        {
+            counts[item] = 0;
+        }
+        foreach (var item in input)
+        {
+            counts[item]+=1;
+        }
+        foreach (var i in counts.Keys)
+        {
+            if (counts[i]>0)
+            {
+                Console.WriteLine("{0} => {1}", i, counts[i]);
+            }
+        }
+    }
+}
