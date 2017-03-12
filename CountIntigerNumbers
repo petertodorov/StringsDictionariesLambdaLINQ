@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+class CountIntigerNumbers
+{
+    static void Main(string[] args)
+    {
+        int[] entries = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+        int[] counter = new int[entries.Max() + 1];
+        for (int i = 0; i < entries.Length; i++)
+        {
+            counter[entries[i]]++;
+        }
+        for (int i = 0; i < counter.Length; i++)
+        {
+            if (counter[i] > 0)
+            {
+                Console.WriteLine($"{i} -> {counter[i]}");
+            }
+        }
+    }
+}
+
