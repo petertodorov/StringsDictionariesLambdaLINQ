@@ -1,29 +1,31 @@
 using System;
-using System.Text;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
+using System.Text;
 using System.Threading.Tasks;
+
 class CountRealNumbers
 {
-    static void Main()
+    static void Main(string[] args)
     {
-        int[] input = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
-        Dictionary <decimal, int> counts= new Dictionary<decimal,int>();
-        foreach (var item in input)
+        decimal[] entries = Console.ReadLine().Split(' ').Select(decimal.Parse).ToArray();
+        SortedDictionary<decimal, int> counter = new SortedDictionary<decimal, int>();
+        foreach (var entry in entries)
         {
-            counts[item] = 0;
+            counter[entry] = 0;
         }
-        foreach (var item in input)
+        foreach (var entry in entries)
         {
-            counts[item]+=1;
+            counter[entry]++;
         }
-        foreach (var i in counts.Keys)
+
+        foreach (var count in counter.Keys)
         {
-            if (counts[i]>0)
+            if (counter[count] > 0)
             {
-                Console.WriteLine("{0} => {1}", i, counts[i]);
+                Console.WriteLine("{0} -> {1}", count, counter[count]);
             }
         }
     }
 }
+
