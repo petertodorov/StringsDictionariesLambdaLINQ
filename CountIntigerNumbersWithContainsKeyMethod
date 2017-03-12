@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+class CountIntigerNumbersWithContainsKeyMethod
+{
+    static void Main(string[] args)
+    {
+        int[] entries = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+        Dictionary<int, int> count = new Dictionary<int, int>();
+        foreach (var entry in entries)
+        {
+            if (count.ContainsKey(entry))
+            {
+                count[entry]++;
+            }
+            else
+            {
+                count[entry]=1;
+            }
+        }
+        foreach (var num in count.Keys)
+        {
+            if (count[num]>0)
+            {
+                Console.WriteLine($"{num} -> {count[num]}");
+            }
+        }
+    }
+}
+
